@@ -8,16 +8,16 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install application dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of the application code to the container
 COPY . .
 
 # Build the React application
-RUN npm run build
+RUN yarn build
 
 # Expose port 80 for the application
 EXPOSE 80
 
 # Start the application when the container is run
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
